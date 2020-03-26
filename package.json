@@ -4,6 +4,11 @@
   "description": "This is a website for the fictional campsites review site Nucamp",
   "main": "index.html",
   "scripts": {
+    "build": "npm run clean && npm run imagemin && npm run copyfonts && npm run usemin",
+    "clean": "rimraf dist",
+    "usemin": "usemin contactus.html -d dist --htmlmin -o dist/contactus.html && usemin aboutus.html -d dist --htmlmin -o dist/aboutus.html && usemin index.html -d dist --htmlmin -o dist/index.html",
+    "imagemin": "imagemin img/* -o dist/img",
+    "copyfonts": "copyfiles -f node_modules/font-awesome/fonts/* dist/fonts",
     "lite": "lite-server",
     "start": "npm run watch:all",
     "scss": "node-sass -o css/ css/",
@@ -21,9 +26,13 @@
     "popper.js": "^1.12.9"
   },
   "devDependencies": {
+    "copyfiles": "^2.0.0",
+    "imagemin-cli": "^3.0.0",
     "lite-server": "^2.3.0",
     "node-sass": "^4.12.0",
     "onchange": "^3.3.0",
-    "parallelshell": "^3.0.1"
+    "parallelshell": "^3.0.1",
+    "rimraf": "^2.6.2",
+    "usemin-cli": "^0.5.1"
   }
 }
