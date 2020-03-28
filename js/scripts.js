@@ -1,4 +1,3 @@
-<script>
 $(function() {
     $(".carousel").carousel( { interval: 2000 } );
     $("#carouselButton").click(function(){
@@ -13,4 +12,14 @@ $(function() {
         }
     });
 });
-</script>
+
+$(function () {
+    $("#reserveButton").click(function () {
+        $("#reserveModal").modal("show");
+    });
+    $("#loginButton").click(function () {
+        $("#loginModal").modal("show");
+    });
+});
+
+
